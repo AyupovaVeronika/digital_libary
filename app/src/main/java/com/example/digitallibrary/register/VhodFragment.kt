@@ -44,7 +44,7 @@ class VhodFragment : Fragment() {
                     }
                 }
             } else {
-                Toast.makeText(requireContext(), "Fields cannot be empty", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Поля не могут быть пустыми", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -62,13 +62,13 @@ class VhodFragment : Fragment() {
             return
         }
         if (!Patterns.EMAIL_ADDRESS.matcher(login).matches()) {
-            Toast.makeText(requireContext(), "Invalid email address", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Неверный адрес электронной почты", Toast.LENGTH_SHORT).show()
             return
         }
         firebaseAuth.sendPasswordResetEmail(login)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    Toast.makeText(requireContext(), "Check your email", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "Проверьте свою электронную почту", Toast.LENGTH_SHORT).show()
                 }
             }
     }

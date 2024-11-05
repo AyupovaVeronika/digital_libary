@@ -12,15 +12,15 @@ import com.example.digitallibrary.databinding.FragmentSignupBinding
 import com.google.firebase.auth.FirebaseAuth
 
 class SignupFragment : Fragment() {
-    private var _binding: FragmentSignupBinding? = null
-    private val binding get() = _binding!!
+    //private var _binding: FragmentSignupBinding? = null
+    private lateinit var binding: FragmentSignupBinding
     private lateinit var firebaseAuth: FirebaseAuth
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentSignupBinding.inflate(inflater, container, false)
+        binding = FragmentSignupBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -32,27 +32,27 @@ class SignupFragment : Fragment() {
 
         // Set up sign-up button click listener
         binding.SingUpButton.setOnClickListener {
-            val email = binding.loginSingUpText.toString().trim()
-            val password = binding.passwordSingUpText.toString()
-            val confirmPassword = binding.passwordAgainSingUpText.toString()
+            val login = binding.loginSingUpText.text.toString().trim()
+            val password = binding.passwordSingUpText.text.toString()
+            val passwordAgain = binding.passwordAgainSingUpText.text.toString()
 
-            if (email.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty()) {
-                if (password == confirmPassword) {
-                    firebaseAuth.createUserWithEmailAndPassword(email, password)
+            if (login.isNotEmpty() && password.isNotEmpty() && passwordAgain.isNotEmpty()) {
+                if (password == passwordAgain) {
+                    firebaseAuth.createUserWithEmailAndPassword(login, password)
                         .addOnCompleteListener { task ->
                             if (task.isSuccessful) {
                                 // Navigate to VhodFragment on successful signup
                                 findNavController().navigate(R.id.to_vhod_button)
                             } else {
                                 // Show error message if signup fails
-                                Toast.makeText(activity, task.exception?.message ?: "Signup failed", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(activity, task.exception?.message ?: "Не удалось зарегистрироваться", Toast.LENGTH_SHORT).show()
                             }
                         }
                 } else {
-                    Toast.makeText(activity, "Passwords do not match", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "Пароли не совпадают", Toast.LENGTH_SHORT).show()
                 }
             } else {
-                Toast.makeText(activity, "All fields are required", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity, "Все поля обязательны для заполнения", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -61,10 +61,5 @@ class SignupFragment : Fragment() {
             // Navigate to VhodFragment
             findNavController().navigate(R.id.to_vhod_button)
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null // Prevent memory leaks by nullifying binding reference
     }
 }

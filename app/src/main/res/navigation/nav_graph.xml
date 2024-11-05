@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/vhodFragment">
+    <fragment
+        android:id="@+id/mainMenuOfflineFragment"
+        android:name="com.example.digitallibrary.offline.MainMenuOfflineFragment"
+        android:label="fragment_main_menu_offline"
+        tools:layout="@layout/fragment_main_menu_offline" >
+        <action
+            android:id="@+id/action_mainMenuOfflineFragment_to_manualFragment"
+            app:destination="@id/manualFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/manualFragment"
+        android:name="com.example.digitallibrary.offline.ManualFragment"
+        android:label="fragment_manual"
+        tools:layout="@layout/fragment_manual" />
+    <fragment
+        android:id="@+id/forgotFragment"
+        android:name="com.example.digitallibrary.register.ForgotFragment"
+        android:label="fragment_forgot"
+        tools:layout="@layout/fragment_forgot" />
+    <fragment
+        android:id="@+id/singUpFragment"
+        android:name="com.example.digitallibrary.register.SignupFragment"
+        android:label="fragment_singup"
+        tools:layout="@layout/fragment_signup" >
+        <action
+            android:id="@+id/to_vhod_button"
+            app:destination="@id/vhodFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/vhodFragment"
+        android:name="com.example.digitallibrary.register.VhodFragment"
+        android:label="fragment_vhod"
+        tools:layout="@layout/fragment_vhod" >
+        <action
+            android:id="@+id/to_register_button"
+            app:destination="@id/singUpFragment" />
+        <action
+            android:id="@+id/to_forgot_password"
+            app:destination="@id/forgotFragment" />
+    </fragment>
+</navigation>

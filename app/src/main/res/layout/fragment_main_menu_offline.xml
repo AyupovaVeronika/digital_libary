@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".offline.MainMenuOfflineFragment"
+    android:background="@drawable/background"
+    android:id="@+id/fragment_main_menu_offline">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="26dp">
+        <Button
+            android:layout_width="55dp"
+            android:layout_height="53dp"
+            android:src="@drawable/icon_search"
+            android:background="@drawable/white_border">
+        </Button>
+        <Button
+            android:id="@+id/fragment_main_menu_offline_to_fragment_manual"
+            android:layout_width="206dp"
+            android:layout_height="53dp"
+            android:background="@drawable/dark_grey_fill"
+            android:text="инструкция"
+            android:textAllCaps="true"
+            android:textSize="20dp">
+        </Button>
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

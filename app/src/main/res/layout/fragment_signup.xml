@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".register.SignupActivity">
+    tools:context=".register.SignupFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,7 +25,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
-                android:background="@drawable/dark_grey_fill"
                 android:paddingBottom="25dp">
 
                 <TextView
@@ -36,58 +35,45 @@
                     android:textAllCaps="true"
                     android:textSize="32sp"
                     android:textStyle="bold"
-                    android:layout_marginTop="46dp"
-                    android:textColor="@color/lavender"/>
+                    android:layout_marginTop="46dp"/>
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/loginSingUpText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="49dp"
-                    android:layout_marginTop="58dp"
-                    app:boxStrokeColor="@color/white"
-                    app:hintTextColor="@color/white">
+                    android:layout_marginTop="58dp">
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/loginSingUpText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:hint="Логин"
-                        android:textSize="14sp"
-                        android:textColor="@color/dark_purple"
-                        android:backgroundTint="@color/white"/>
+                        android:textSize="14sp"/>
                 </com.google.android.material.textfield.TextInputLayout>
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/passwordSingUpText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="49dp"
-                    android:layout_marginTop="24dp"
-                    app:boxStrokeColor="@color/white"
-                    app:hintTextColor="@color/white">
+                    android:layout_marginTop="24dp">
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/passwordSingUpText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:hint="Пароль"
-                        android:textSize="14sp"
-                        android:textColor="@color/dark_purple"
-                        android:backgroundTint="@color/white"/>
+                        android:textSize="14sp"/>
                 </com.google.android.material.textfield.TextInputLayout>
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/passwordAgainSingUpText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="49dp"
-                    android:layout_marginTop="24dp"
-                    app:boxStrokeColor="@color/white"
-                    app:hintTextColor="@color/white">
+                    android:layout_marginTop="24dp">
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/passwordAgainSingUpText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:hint="Подтвердить пароль"
-                        android:textSize="14sp"
-                        android:textColor="@color/dark_purple"
-                        android:backgroundTint="@color/white"/>
+                        android:textSize="14sp"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <Button
@@ -97,9 +83,7 @@
                     android:layout_marginTop="32dp"
                     android:gravity="center"
                     android:text="Регистрация"
-                    android:textColor="@color/white"
-                    android:textSize="18sp"
-                    android:background="@drawable/lavender_fill"/>
+                    android:textSize="18sp"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -110,8 +94,6 @@
             android:layout_marginTop="80dp"
             android:gravity="center"
             android:text="Вход"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:background="@drawable/lavender_fill"/>
+            android:textSize="18sp"/>
     </LinearLayout>
 </ScrollView>
